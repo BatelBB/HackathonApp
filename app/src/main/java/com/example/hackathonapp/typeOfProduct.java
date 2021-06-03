@@ -9,6 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
+import com.example.hackathonapp.AddingPictures.AddImages;
+
 public class typeOfProduct extends AppCompatActivity {
 private ImageButton mFridgeButton;
     @Override
@@ -24,7 +26,8 @@ private ImageButton mFridgeButton;
         mFridgeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), )
+                Intent intent = new Intent(view.getContext(), AddImages.class);
+                startActivity(intent);
             }
         });
     }
