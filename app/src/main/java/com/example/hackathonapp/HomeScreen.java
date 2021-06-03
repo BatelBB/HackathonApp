@@ -2,6 +2,7 @@ package com.example.hackathonapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -24,7 +25,8 @@ public class HomeScreen extends AppCompatActivity {
         mApartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                Intent intent = new Intent(view.getContext(), OldInsurences.class);
+                startActivity(intent);
             }
         });
     }

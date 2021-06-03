@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hackathonapp">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HackathonApp">
-        <activity android:name=".OldInsurences"></activity>
+        <activity android:name=".typeOfProduct"></activity>
+        <activity android:name=".newInsurance" />
+        <activity android:name=".fillDetailsActivity" />
+        <activity android:name=".AddingPictures.AddImages" />
+        <activity android:name=".OldInsurences" />
         <activity android:name=".HomeScreen" />
         <activity android:name=".MainActivity">
             <intent-filter>

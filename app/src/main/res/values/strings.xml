@@ -2,4 +2,5 @@
     <string name="app_name">HackathonApp</string>
     <string name="username_edittext">Username</string>
     <string name="paswword_edittext">Paswword</string>
+    <string name="password_edittext">Password</string>
 </resources>

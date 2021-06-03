@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homescreen_background"
     android:orientation="vertical"
-    tools:context=".HomeScreen">
+    android:background="@drawable/take_picture_background"
+    tools:context=".AddingPictures.AddImages">
 
     <LinearLayout
         android:layout_width="95dp"
@@ -16,12 +16,10 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/apartment_button"
+            android:id="@+id/open_camera_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/apartment_button" />
+            android:background="@drawable/take_picture_button"/>
     </LinearLayout>
-
-
 
 </GridLayout>

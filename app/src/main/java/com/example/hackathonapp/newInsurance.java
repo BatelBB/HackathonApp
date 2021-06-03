@@ -9,27 +9,22 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-public class OldInsurences extends AppCompatActivity {
-private ImageButton mSavionButton;
-private ImageButton mPlusButton;
+public class newInsurance extends AppCompatActivity {
+private ImageButton mContentsButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //next three lines are for setting full screen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_new_insurance);
 
-        setContentView(R.layout.activity_old_insurences);
-
-        mSavionButton = (ImageButton) findViewById(R.id.savion_button);
-        mPlusButton = (ImageButton) findViewById(R.id.add_new_insurence_btn);
-
-        mPlusButton.setOnClickListener(new View.OnClickListener() {
+        mContentsButton = (ImageButton) findViewById(R.id.contents_button);
+        mContentsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), newInsurance.class);
+                Intent intent = new Intent(view.getContext(), fillDetailsActivity.class);
                 startActivity(intent);
             }
         });
