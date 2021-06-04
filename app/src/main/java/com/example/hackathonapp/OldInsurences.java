@@ -33,5 +33,13 @@ private ImageButton mPlusButton;
                 startActivity(intent);
             }
         });
+
+        mSavionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),savion_insurance.class );
+                startActivity(intent);
+            }
+        });
     }
 }
