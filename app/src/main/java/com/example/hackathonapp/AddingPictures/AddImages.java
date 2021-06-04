@@ -15,6 +15,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
@@ -93,12 +94,24 @@ public class AddImages extends AppCompatActivity {
                         selectedImage = data.getData();
 
                         mImageFromGallery.setImageURI(selectedImage);
-                        String utf = selectedImage.toString();
-                        byte[] bytes = utf.getBytes(StandardCharsets.UTF_8);
-                        String utf8Encoding = new String(bytes, StandardCharsets.UTF_8);
-                        encodedString = utf8Encoding;
+//                        String utf = selectedImage.toString();
+//                        byte[] bytes = utf.getBytes(StandardCharsets.UTF_8);
+//                        String utf8Encoding = new String(bytes, StandardCharsets.UTF_8);
+//                        encodedString = utf8Encoding;
 
-                        uploadImage();
+
+                        BitmapDrawable drawable = (BitmapDrawable) mImageFromGallery.getDrawable();
+                        Bitmap bitmap = drawable.getBitmap();
+////                final byte[] arr = bitmap.getNinePatchChunk();
+                        Intent intent = new Intent(AddImages.this, afterLoadImage.class);
+                        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bs);
+                        intent.putExtra("byteArray", bs.toByteArray());
+//                intent.putExtra("response",response);
+//                intent.putExtra("image", bitmap);
+//                        SystemClock.sleep(3000);
+                        startActivity(intent);
+//                        uploadImage();
                     }
                 }
             });
@@ -140,64 +153,64 @@ public class AddImages extends AppCompatActivity {
     /**
      * API call for upload selected image from gallery to the server
      */
-    public void uploadImage() {
-        Log.v("TAG", "BANANA2");
-        RequestQueue rq = Volley.newRequestQueue(this);
-        String url = "https://hackathon-bituach-server.herokuapp.com";
-        Log.d("URL", url);
-        StringRequest stringRequest = new StringRequest(Request.Method.PUT,
-                url, new Response.Listener<String>() {
-
-            @Override
-            public void onResponse(String response) {
-//                try {
-                Log.e("RESPONSE", response);
-//                    JSONObject json = new JSONObject(response);
-
-                Toast.makeText(getBaseContext(),
-                        "The image uploaded", Toast.LENGTH_SHORT)
-                        .show();
-               BitmapDrawable drawable = (BitmapDrawable) mImageFromGallery.getDrawable();
-               Bitmap bitmap = drawable.getBitmap();
-////                final byte[] arr = bitmap.getNinePatchChunk();
-                Intent intent = new Intent(AddImages.this, afterLoadImage.class);
-                ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bs);
-                intent.putExtra("byteArray", bs.toByteArray());
-                intent.putExtra("response",response);
-//                intent.putExtra("image", bitmap);
-                startActivity(intent);
-//                } catch (JSONException e) {
-//                    Log.d("JSON Exception", e.toString());
-//                    Toast.makeText(getBaseContext(),
-//                            "Error while loadin data!",
-//                            Toast.LENGTH_LONG).show();
-//                }
-
-            }
-
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("ERROR", "Error [" + error + "]");
-                Toast.makeText(getBaseContext(),
-                        "Cannot connect to server", Toast.LENGTH_LONG)
-                        .show();
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
-
-                params.put("image", encodedString);
-//                params.put("filename", fileName);
-
-                return params;
-
-            }
-
-        };
-        rq.add(stringRequest);
-    }
+//    public void uploadImage() {
+//        Log.v("TAG", "BANANA2");
+//        RequestQueue rq = Volley.newRequestQueue(this);
+//        String url = "https://hackathon-bituach-server.herokuapp.com";
+//        Log.d("URL", url);
+//        StringRequest stringRequest = new StringRequest(Request.Method.PUT,
+//                url, new Response.Listener<String>() {
+//
+//            @Override
+//            public void onResponse(String response) {
+////                try {
+//                Log.e("RESPONSE", response);
+////                    JSONObject json = new JSONObject(response);
+//
+//                Toast.makeText(getBaseContext(),
+//                        "The image uploaded", Toast.LENGTH_SHORT)
+//                        .show();
+//               BitmapDrawable drawable = (BitmapDrawable) mImageFromGallery.getDrawable();
+//               Bitmap bitmap = drawable.getBitmap();
+//////                final byte[] arr = bitmap.getNinePatchChunk();
+//                Intent intent = new Intent(AddImages.this, afterLoadImage.class);
+//                ByteArrayOutputStream bs = new ByteArrayOutputStream();
+//                bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bs);
+//                intent.putExtra("byteArray", bs.toByteArray());
+////                intent.putExtra("response",response);
+////                intent.putExtra("image", bitmap);
+//                startActivity(intent);
+////                } catch (JSONException e) {
+////                    Log.d("JSON Exception", e.toString());
+////                    Toast.makeText(getBaseContext(),
+////                            "Error while loadin data!",
+////                            Toast.LENGTH_LONG).show();
+////                }
+//
+//            }
+//
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Log.d("ERROR", "Error [" + error + "]");
+//                Toast.makeText(getBaseContext(),
+//                        "Cannot connect to server", Toast.LENGTH_LONG)
+//                        .show();
+//            }
+//        }) {
+//            @Override
+//            protected Map<String, String> getParams() {
+//                Map<String, String> params = new HashMap<String, String>();
+//
+//                params.put("image", encodedString);
+////                params.put("filename", fileName);
+//
+//                return params;
+//
+//            }
+//
+//        };
+//        rq.add(stringRequest);
+//    }
 
 }

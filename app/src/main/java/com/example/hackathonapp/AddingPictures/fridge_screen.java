@@ -1,4 +1,4 @@
-package com.example.hackathonapp;
+package com.example.hackathonapp.AddingPictures;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,24 +9,26 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-public class earings_menu extends AppCompatActivity {
-private ImageButton mGoBackButton;
+import com.example.hackathonapp.OldInsurences;
+import com.example.hackathonapp.R;
+
+public class fridge_screen extends AppCompatActivity {
+private ImageButton mReturnButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_earings_menu);
+        setContentView(R.layout.activity_fridge_screen);
 
-        mGoBackButton = (ImageButton) findViewById(R.id.go_back_button);
-        mGoBackButton.setOnClickListener(new View.OnClickListener() {
+        mReturnButton = (ImageButton) findViewById(R.id.fridge_back_button);
+        mReturnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), OldInsurences.class);
                 startActivity(intent);
             }
         });
-
     }
 }

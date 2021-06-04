@@ -48,16 +48,16 @@ private TextView mManifactureTextView;
         if(extras !=null) {
             String value = extras.getString("response");
             Log.v("RESPONSE", "SOME" + value);
-            String[] valSplitted = value.split(",");
-            mManifactureTextView.setText(valSplitted[0]);
-            mModuleTextVIew.setText(valSplitted[1]);
-            mPriceTextView.setText(valSplitted[2]);
+//            String[] valSplitted = value.split(",");
+//            mManifactureTextView.setText(valSplitted[0]);
+//            mModuleTextVIew.setText(valSplitted[1]);
+//            mPriceTextView.setText(valSplitted[2]);
         }
 
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), typeOfProduct.class);
+                Intent intent = new Intent(view.getContext(), fridge_screen.class);
                 startActivity(intent);
             }
         });

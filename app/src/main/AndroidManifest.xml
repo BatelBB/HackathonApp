@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HackathonApp">
-        <activity android:name=".jewelry_product_page"></activity>
+        <activity android:name=".AddingPictures.fridge_screen"></activity>
+        <activity android:name=".jewelry_product_page" />
         <activity android:name=".ProductSavion" />
         <activity android:name=".earings_menu" />
         <activity android:name=".AddingPictures.afterLoadImage" />
