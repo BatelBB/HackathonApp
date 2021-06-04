@@ -46,21 +46,49 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:layout_marginRight="50dp"
+                    android:layout_marginRight="35dp"
                     android:layout_marginTop="146dp"/>
                 <TextView
                     android:id="@+id/moodle_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:layout_marginTop="83dp"/>
+                    android:layout_marginTop="83dp"
+                    android:layout_marginRight="35dp"/>
                 <TextView
                     android:id="@+id/price_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="85dp"
+                    android:layout_marginRight="35dp"
                     android:textColor="@color/black"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right">
+                
+                <ImageButton
+                    android:id="@+id/clip_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/clip_button"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginRight="100dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right">
+                <ImageButton
+                    android:id="@+id/save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="260dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/save_button"/>
+            </LinearLayout>
+                
         </LinearLayout>
     </ScrollView>
 

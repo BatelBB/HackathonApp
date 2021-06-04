@@ -38,6 +38,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -92,7 +93,10 @@ public class AddImages extends AppCompatActivity {
                         selectedImage = data.getData();
 
                         mImageFromGallery.setImageURI(selectedImage);
-                        encodedString = selectedImage.toString();
+                        String utf = selectedImage.toString();
+                        byte[] bytes = utf.getBytes(StandardCharsets.UTF_8);
+                        String utf8Encoding = new String(bytes, StandardCharsets.UTF_8);
+                        encodedString = utf8Encoding;
 
                         uploadImage();
                     }
@@ -160,6 +164,7 @@ public class AddImages extends AppCompatActivity {
                 ByteArrayOutputStream bs = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bs);
                 intent.putExtra("byteArray", bs.toByteArray());
+                intent.putExtra("response",response);
 //                intent.putExtra("image", bitmap);
                 startActivity(intent);
 //                } catch (JSONException e) {

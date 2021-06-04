@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HackathonApp">
-        <activity android:name=".AddingPictures.afterLoadImage"></activity>
+        <activity android:name=".jewelry_product_page"></activity>
+        <activity android:name=".ProductSavion" />
+        <activity android:name=".earings_menu" />
+        <activity android:name=".AddingPictures.afterLoadImage" />
         <activity android:name=".savion_insurance" />
         <activity android:name=".typeOfProduct" />
         <activity android:name=".newInsurance" />

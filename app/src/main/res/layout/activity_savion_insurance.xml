@@ -4,12 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/savion_background"
     tools:context=".savion_insurance">
+    <ImageButton
+        android:id="@+id/savion_aprt_button"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_marginTop="320dp"
+        android:background="@drawable/savion_button"/>
 
-    <ExpandableListView
-        android:id="@+id/elv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<!--    <ExpandableListView-->
+<!--        android:id="@+id/elv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
 
-    </ExpandableListView>
+<!--    </ExpandableListView>-->
 </LinearLayout>

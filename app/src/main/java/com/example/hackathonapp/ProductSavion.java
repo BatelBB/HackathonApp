@@ -9,23 +9,21 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-public class savion_insurance extends AppCompatActivity {
-private ImageButton mSavionButton;
+public class ProductSavion extends AppCompatActivity {
+private ImageButton mJewelryButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //next three lines are for setting full screen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_savion_insurance);
+        setContentView(R.layout.activity_product_savion);
 
-        mSavionButton = (ImageButton) findViewById(R.id.savion_aprt_button);
-        mSavionButton.setOnClickListener(new View.OnClickListener() {
+        mJewelryButton = (ImageButton) findViewById(R.id.jewelry_watches_button);
+        mJewelryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ProductSavion.class);
+                Intent intent = new Intent(view.getContext(), jewelry_product_page.class);
                 startActivity(intent);
             }
         });

@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/new_insurance_background"
-    tools:context=".newInsurance">
+    android:background="@drawable/product_savion"
+    tools:context=".ProductSavion">
 
     <ImageButton
-        android:id="@+id/contents_button"
+        android:id="@+id/jewelry_watches_button"
         android:layout_width="wrap_content"
-        android:layout_height="240dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="22dp"
-        android:background="@drawable/new_insurance_button" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="352dp"
+        android:layout_marginLeft="153dp"
+        android:background="@drawable/earings_jewlery_button"/>
 
 </LinearLayout>
